@@ -10,7 +10,7 @@ const AddPhoto = props => {
         const { link, description } = e.target.elements
         if (link.value && description.value) {
             props.addPhoto({
-                id: 0,
+                id: Number(new Date()),
                 description: description.value,
                 imageLink: link.value
             })
