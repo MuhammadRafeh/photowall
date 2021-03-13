@@ -2,8 +2,8 @@ import React from 'react';
 
 const Photo = props => {
     return (
-        <figure>
-            
+        <figure className="figure">
+
         </figure>
     );
 }
