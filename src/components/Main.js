@@ -23,10 +23,14 @@ const Main = props => {
         }]
     );
 
+    const removePhoto = post => {
+        setPosts(posts.filter(obj => obj != post));
+    }
+
     return (
         <div>
             <Title title='Photowall' />
-            <PhotoWall posts={posts} />
+            <PhotoWall posts={posts} onPressDelete={removePhoto}/>
         </div>
     );
 }
