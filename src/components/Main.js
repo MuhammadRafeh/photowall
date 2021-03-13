@@ -1,4 +1,11 @@
 import React, { useState } from 'react';
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link
+} from "react-router-dom";
+import AddPhoto from './AddPhoto';
 // import List from './List';
 import PhotoWall from './PhotoWall';
 import Title from './Title';
@@ -29,9 +36,18 @@ const Main = props => {
 
     return (
         <div>
-            <Title title='Photowall' />
-            <button className="add-icon"></button>
-            <PhotoWall posts={posts} onPressDelete={removePhoto}/>
+            <Router>
+                <Switch>
+                    <Route exact path="/">
+                        <Title title='Photowall' />
+                        {/* <button className="add-icon"></button> */}
+                        <PhotoWall posts={posts} onPressDelete={removePhoto} />
+                    </Route>
+                    <Route path="/AddPhoto">
+                        <AddPhoto />
+                    </Route>
+                </Switch>
+            </Router>
         </div>
     );
 }
