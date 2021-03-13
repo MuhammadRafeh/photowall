@@ -4,7 +4,15 @@ const Photo = props => {
     console.log(props);
     return (
         <figure className="figure">
-            <img src={props.post.imageLink} alt={props.post.description} />
+            <img className='photo' src={props.post.imageLink} alt={props.post.description} />
+            <figcaption>
+                <p>
+                    {props.post.description}
+                </p>
+            </figcaption>
+            <div className='button-container'>
+                <button className="remove-button">Delete</button>
+            </div>
         </figure>
     );
 }
