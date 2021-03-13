@@ -34,6 +34,10 @@ const Main = props => {
         setPosts(posts.filter(obj => obj !== post));
     }
 
+    const addPhoto = post => { //post is obj
+        setPosts(posts.concat(post));
+    }
+
     return (
         <div>
             <Router>
@@ -43,9 +47,12 @@ const Main = props => {
                         {/* <button className="add-icon"></button> */}
                         <PhotoWall posts={posts} onPressDelete={removePhoto} />
                     </Route>
-                    <Route path="/AddPhoto">
-                        <AddPhoto />
-                    </Route>
+                    <Route
+                        path="/AddPhoto"
+                        render={({history}) => (
+                            <AddPhoto addPhoto={addPhoto} posts={posts} history={history} />
+                        )}
+                    />
                 </Switch>
             </Router>
         </div>
