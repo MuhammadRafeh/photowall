@@ -47,12 +47,9 @@ const Main = props => {
                         {/* <button className="add-icon"></button> */}
                         <PhotoWall posts={posts} onPressDelete={removePhoto} />
                     </Route>
-                    <Route
-                        path="/AddPhoto"
-                        render={({history}) => (
-                            <AddPhoto addPhoto={addPhoto} posts={posts} history={history} />
-                        )}
-                    />
+                    <Route path="/AddPhoto">
+                        <AddPhoto addPhoto={addPhoto} posts={posts} />
+                    </Route>
                 </Switch>
             </Router>
         </div>

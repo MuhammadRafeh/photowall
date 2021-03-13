@@ -1,6 +1,9 @@
 import React from 'react';
+import { useHistory } from "react-router-dom";
 
 const AddPhoto = props => {
+
+    let history = useHistory();
 
     const handleSubmit = e => {
         e.preventDefault();
@@ -11,7 +14,7 @@ const AddPhoto = props => {
                 description: description.value,
                 imageLink: link.value
             })
-            props.history.push('/');
+            history.push('/');
         }
     }
 
