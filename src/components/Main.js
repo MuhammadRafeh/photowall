@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import List from './List';
+// import List from './List';
 import PhotoWall from './PhotoWall';
 import Title from './Title';
 
@@ -24,7 +24,7 @@ const Main = props => {
     );
 
     const removePhoto = post => {
-        setPosts(posts.filter(obj => obj != post));
+        setPosts(posts.filter(obj => obj !== post));
     }
 
     return (
