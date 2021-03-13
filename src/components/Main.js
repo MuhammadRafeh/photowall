@@ -30,6 +30,7 @@ const Main = props => {
     return (
         <div>
             <Title title='Photowall' />
+            <button className="add-icon"></button>
             <PhotoWall posts={posts} onPressDelete={removePhoto}/>
         </div>
     );
